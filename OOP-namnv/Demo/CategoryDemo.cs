@@ -16,7 +16,7 @@ namespace OOP_namnv.Demo
         }
         public void printCategoryDemo(Category category)
         {
-            Console.WriteLine("Category {" + category.id + ", " + category.name + "}");
+            Console.WriteLine("Category {" + category.getId() + ", " + category.getName() + "}");
         }
     }
 }

@@ -10,11 +10,11 @@ namespace OOP_namnv
 {
     class Database
     {
-        public ArrayList productTable = new ArrayList();
+        private ArrayList productTable = new ArrayList();
 
-        public ArrayList categoryTable = new ArrayList();
+        private ArrayList categoryTable = new ArrayList();
 
-        public ArrayList accessoryTable = new ArrayList();
+        private ArrayList accessoryTable = new ArrayList();
 
         private static Database instance;
 
@@ -79,7 +79,7 @@ namespace OOP_namnv
                 for(int i = 0; i < productTable.Count; i++)
                 {
                     Product productTemp = (Product)Convert.ChangeType(productTable[i], typeof(Product));
-                    if (productTemp.id == product.getId() )
+                    if (productTemp.getId() == product.getId() )
                     {
                         productTable[i] = product;
                         return 1;
@@ -92,7 +92,7 @@ namespace OOP_namnv
                 for (int i = 0; i < categoryTable.Count; i++)
                 {
                     Category categoryTemp = (Category)Convert.ChangeType(categoryTable[i], typeof(Category));
-                    if (categoryTemp.id == category.getId())
+                    if (categoryTemp.getId() == category.getId())
                     {
                         categoryTable[i] = category;
                         return 1;
@@ -105,7 +105,7 @@ namespace OOP_namnv
                 for (int i = 0; i < accessoryTable.Count; i++)
                 {
                     Accessory accessoryTemp = (Accessory)Convert.ChangeType(accessoryTable[i], typeof(Accessory));
-                    if (accessoryTemp.id == accessory.getId())
+                    if (accessoryTemp.getId() == accessory.getId())
                     {
                         accessoryTable[i] = accessory;
                         return 1;
@@ -160,7 +160,7 @@ namespace OOP_namnv
                 for (int i = 0; i < productTable.Count; i++)
                 {
                     Product productTemp = (Product)Convert.ChangeType(productTable[i], typeof(Product));
-                    if (productTemp.id == id)
+                    if (productTemp.getId() == id)
                     {
                         productTable[i] = product;
                         return 1;
@@ -173,7 +173,7 @@ namespace OOP_namnv
                 for (int i = 0; i < categoryTable.Count; i++)
                 {
                     Category categoryTemp = (Category)Convert.ChangeType(categoryTable[i], typeof(Category));
-                    if (categoryTemp.id == id)
+                    if (categoryTemp.getId() == id)
                     {
                         categoryTable[i] = category;
                         return 1;
@@ -186,7 +186,7 @@ namespace OOP_namnv
                 for (int i = 0; i < accessoryTable.Count; i++)
                 {
                     Accessory accessoryTemp = (Accessory)Convert.ChangeType(accessoryTable[i], typeof(Accessory));
-                    if (accessoryTemp.id == id)
+                    if (accessoryTemp.getId() == id)
                     {
                         accessoryTable[i] = accessory;
                         return 1;

@@ -16,12 +16,12 @@ namespace OOP_namnv.Demo
             CategoryDAO categoryDAO = new CategoryDAO();
             categoryDAO.insert(category);
         }
-        public void updatetTest(Category category)
+        public void updateTest(Category category)
         {
             CategoryDAO categoryDAO = new CategoryDAO();
             categoryDAO.update(category);
         }
-        public void deletetTest(Category category)
+        public void deleteTest(Category category)
         {
             CategoryDAO categoryDAO = new CategoryDAO();
             categoryDAO.delete(category);

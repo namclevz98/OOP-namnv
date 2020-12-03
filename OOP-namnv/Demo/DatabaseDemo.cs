@@ -58,7 +58,7 @@ namespace OOP_namnv
                 for (i = 0; i < productList.Count; i++)
                 {
                     Product product = (Product)Convert.ChangeType(productList[i], typeof(Product));
-                    Console.WriteLine("Product {" + product.id + ", " + product.name + ", " + product.categoryId +"}");
+                    Console.WriteLine("Product {" + product.getId() + ", " + product.getName() + ", " + product.getCategoryId() +"}");
                 }
             }
             if (name.Equals(Database.CATEGORY))
@@ -67,7 +67,7 @@ namespace OOP_namnv
                 for (i = 0; i < categoryList.Count; i++)
                 {
                     Category category = (Category)Convert.ChangeType(categoryList[i], typeof(Category));
-                    Console.WriteLine("Category {" + category.id + ", " + category.name + "}");
+                    Console.WriteLine("Category {" + category.getId() + ", " + category.getName() + "}");
                 }
             }
             if (name.Equals(Database.ACCESSORY))
@@ -76,7 +76,7 @@ namespace OOP_namnv
                 for (i = 0; i < accessoryList.Count; i++)
                 {
                     Accessory accessory = (Accessory)Convert.ChangeType(accessoryList[i], typeof(Accessory));
-                    Console.WriteLine("Accessory {" + accessory.id + ", " + accessory.name + "}");
+                    Console.WriteLine("Accessory {" + accessory.getId() + ", " + accessory.getName() + "}");
                 }
             }
         }

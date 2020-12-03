@@ -16,7 +16,7 @@ namespace OOP_namnv.Demo
         }
         public void printAccessoryDemo(Accessory accessory)
         {
-            Console.WriteLine("Accessory {" + accessory.id + ", " + accessory.name + "}");
+            Console.WriteLine("Accessory {" + accessory.getId() + ", " + accessory.getName() + "}");
         }
     }
 }

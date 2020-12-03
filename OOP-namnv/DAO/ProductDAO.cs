@@ -13,29 +13,12 @@ namespace OOP_namnv.DAO
         public bool insert(Product product)
         {
             var data = Database.getInstance();
-            var result = data.insertTable(Database.PRODUCT, product);
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
+            return Convert.ToBoolean(data.insertTable(Database.PRODUCT, product));
         }
         public bool update(Product product)
         {
             var data = Database.getInstance();
-            var result = data.updateTable(Database.PRODUCT, product);
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Convert.ToBoolean(data.updateTable(Database.PRODUCT, product));
         }
         public bool delete(Product product)
         {
@@ -55,10 +38,35 @@ namespace OOP_namnv.DAO
             var productList = data.selectTable(Database.PRODUCT);
             foreach (Product product in productList)
             {
-                if (product.id == id)
+                if (product.getId() == id)
                     return product;
             }
             return null;
+        }
+        public Product findByName(string name)
+        {
+            var data = Database.getInstance();
+            foreach(Product product in data.selectTable(Database.PRODUCT))
+            {
+                if(product.getName().Equals(name))
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
+        public ArrayList search(string name)
+        {
+            var data = Database.getInstance();
+            ArrayList productList = new ArrayList();
+            foreach (Product product in data.selectTable(Database.PRODUCT))
+            {
+                if (product.getName().Contains(name))
+                {
+                    productList.Add(product);
+                }
+            }
+            return productList;
         }
     }
 }

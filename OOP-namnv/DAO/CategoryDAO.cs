@@ -13,29 +13,12 @@ namespace OOP_namnv.DAO
         public bool insert(Category category)
         {
             var data = Database.getInstance();
-            var result = data.insertTable(Database.CATEGORY, category);
-            if(result == 1)
-            {
-                return true;            
-            }
-            else
-            {
-                return false;
-            }
-
+            return Convert.ToBoolean(data.insertTable(Database.CATEGORY, category));
         }    
         public bool update(Category category)
         {
             var data = Database.getInstance();
-            var result = data.updateTable(Database.CATEGORY, category);
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Convert.ToBoolean(data.updateTable(Database.CATEGORY, category));
         }
         public bool delete(Category category)
         {
@@ -55,10 +38,35 @@ namespace OOP_namnv.DAO
             var categoryList = data.selectTable(Database.CATEGORY);
             foreach(Category category in categoryList)
             {
-                if (category.id == id)
+                if (category.getId() == id)
                     return category;
             }
             return null;
+        }
+        public Category findByName(string name)
+        {
+            var data = Database.getInstance();
+            foreach (Category category in data.selectTable(Database.CATEGORY))
+            {
+                if (category.getName().Equals(name))
+                {
+                    return category;
+                }
+            }
+            return null;
+        }
+        public ArrayList search(string name)
+        {
+            var data = Database.getInstance();
+            ArrayList categoryList = new ArrayList();
+            foreach (Category category in data.selectTable(Database.CATEGORY))
+            {
+                if (category.getName().Contains(name))
+                {
+                    categoryList.Add(category);
+                }
+            }
+            return categoryList;
         }
     }
 }

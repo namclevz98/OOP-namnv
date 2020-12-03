@@ -16,7 +16,7 @@ namespace OOP_namnv.Demo
         }
         public void printProductTest(Product product)
         {
-            Console.WriteLine("Product {" + product.id + ", " + product.name + ", " + product.categoryId + "}");
+            Console.WriteLine("Product {" + product.getId() + ", " + product.getName() + ", " + product.getCategoryId() + "}");
         }
     }
 }

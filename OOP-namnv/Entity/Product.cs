@@ -6,34 +6,15 @@ using System.Threading.Tasks;
 
 namespace OOP_namnv.Entity
 {
-    class Product
+    class Product:BaseRow
     {
-        public int id;
-        public string name;
-        public int categoryId;
+        private int categoryId;
 
         public Product(int id, string name, int categoryId)
         {
             this.id = id;
             this.name = name;
             this.categoryId = categoryId;
-        }
-
-        public int getId()
-        {
-            return id;
-        }
-        public void setId(int id)
-        {
-            this.id = id;
-        }
-        public string getName()
-        {
-            return name;
-        }
-        public void setName(int id)
-        {
-            this.id = id;
         }
         public int getCategoryId()
         {

@@ -8,21 +8,12 @@ using OOP_namnv.Entity;
 
 namespace OOP_namnv.DAO
 {
-    class AccessoryDAO
+    class AccessoryDAO : BaseDAO
     {
         public bool insert(Accessory accessory)
         {
             var data = Database.getInstance();
-            var result = data.insertTable(Database.ACCESSORY, accessory);
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
+            return Convert.ToBoolean(data.insertTable(Database.ACCESSORY, accessory));
         }
         public bool update(Accessory accessory)
         {
@@ -47,10 +38,36 @@ namespace OOP_namnv.DAO
             var accessoryList = data.selectTable(Database.ACCESSORY);
             foreach (Accessory accessory in accessoryList)
             {
-                if (accessory.id == id)
+                if (accessory.getId() == id)
                     return accessory;
             }
             return null;
         }
+        public Accessory findByName(string name)
+        {
+            var data = Database.getInstance();
+            foreach (Accessory accessory in data.selectTable(Database.ACCESSORY))
+            {
+                if (accessory.getName().Equals(name))
+                {
+                    return accessory;
+                }
+            }
+            return null;
+        }
+        public ArrayList search(string name)
+        {
+            var data = Database.getInstance();
+            ArrayList accessoryList = new ArrayList();
+            foreach (Accessory accessory in data.selectTable(Database.ACCESSORY))
+            {
+                if (accessory.getName().Contains(name))
+                {
+                    accessoryList.Add(accessory);
+                }
+            }
+            return accessoryList;
+        }
     }
 }
+

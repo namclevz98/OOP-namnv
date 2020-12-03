@@ -16,12 +16,12 @@ namespace OOP_namnv.Demo
             AccessoryDAO accessoryDAO = new AccessoryDAO();
             accessoryDAO.insert(accessory);
         }
-        public void updatetTest(Accessory accessory)
+        public void updateTest(Accessory accessory)
         {
             AccessoryDAO accessoryDAO = new AccessoryDAO();
             accessoryDAO.update(accessory);
         }
-        public void deletetTest(Accessory accessory)
+        public void deleteTest(Accessory accessory)
         {
             AccessoryDAO accessoryDAO = new AccessoryDAO();
             accessoryDAO.delete(accessory);

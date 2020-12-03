@@ -16,12 +16,12 @@ namespace OOP_namnv.Demo
             ProductDAO productDAO = new ProductDAO();
             productDAO.insert(product);
         }
-        public void updatetTest(Product product)
+        public void updateTest(Product product)
         {
             ProductDAO productDAO = new ProductDAO();
             productDAO.update(product);
         }
-        public void deletetTest(Product product)
+        public void deleteTest(Product product)
         {
             ProductDAO productDAO = new ProductDAO();
             productDAO.delete(product);
@@ -36,5 +36,6 @@ namespace OOP_namnv.Demo
             ProductDAO productDAO = new ProductDAO();
             return productDAO.findById(id);
         }
+
     }
 }
