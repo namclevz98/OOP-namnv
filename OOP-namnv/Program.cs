@@ -10,7 +10,11 @@ namespace OOP_namnv
     {
         static void Main(string[] args)
         {
-
+            Database data = new Database();
+            DatabaseDemo dbDemo = new DatabaseDemo();
+            dbDemo.initDatabase();
+            dbDemo.printDatabaseTest(Database.PRODUCT);
+            Console.ReadKey();
         }
     }
 }

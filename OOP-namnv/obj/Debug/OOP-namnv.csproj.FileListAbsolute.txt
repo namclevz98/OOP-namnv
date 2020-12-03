@@ -1,0 +1,7 @@
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\bin\Debug\OOP-namnv.exe.config
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\bin\Debug\OOP-namnv.exe
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\bin\Debug\OOP-namnv.pdb
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\obj\Debug\OOP-namnv.csprojAssemblyReference.cache
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\obj\Debug\OOP-namnv.csproj.CoreCompileInputs.cache
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\obj\Debug\OOP-namnv.exe
+C:\Users\NvN\source\repos\OOP-namnv\OOP-namnv\obj\Debug\OOP-namnv.pdb
