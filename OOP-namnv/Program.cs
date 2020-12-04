@@ -15,11 +15,11 @@ namespace OOP_namnv
         {
             ProductDemo productDemo = new ProductDemo();
             var product = productDemo.createProductTest(10, "test", 1);
+            productDemo.printProductTest(product);
             DatabaseDemo dbDemo = new DatabaseDemo();
             dbDemo.initDatabase();
             dbDemo.insertTableTest(Database.PRODUCT, product);
-            dbDemo.printDatabaseTest(Database.PRODUCT);
-
+            dbDemo.printDatabaseTest(Database.PRODUCT);        
             Console.ReadKey();
         }
     }

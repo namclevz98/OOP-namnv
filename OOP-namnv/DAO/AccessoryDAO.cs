@@ -10,27 +10,9 @@ namespace OOP_namnv.DAO
 {
     class AccessoryDAO : BaseDAO
     {
-        public bool insert(Accessory accessory)
+        public AccessoryDAO()
         {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.insertTable(Database.ACCESSORY, accessory));
-        }
-        public bool update(Accessory accessory)
-        {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.updateTable(Database.ACCESSORY, accessory));
-        }
-        public bool delete(Accessory accessory)
-        {
-            var data = Database.getInstance();
-            var result = data.deleteTable(Database.ACCESSORY, accessory);
-            return result;
-        }
-        public ArrayList findAll()
-        {
-            var data = Database.getInstance();
-            var accessoryList = data.selectTable(Database.ACCESSORY);
-            return accessoryList;
+            tableName = Database.ACCESSORY;
         }
         public Accessory findById(int id)
         {

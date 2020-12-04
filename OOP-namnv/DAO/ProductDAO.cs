@@ -8,30 +8,12 @@ using OOP_namnv.Entity;
 
 namespace OOP_namnv.DAO
 {
-    class ProductDAO
+    class ProductDAO:BaseDAO
     {
-        public bool insert(Product product)
+        public ProductDAO()
         {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.insertTable(Database.PRODUCT, product));
-        }
-        public bool update(Product product)
-        {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.updateTable(Database.PRODUCT, product));
-        }
-        public bool delete(Product product)
-        {
-            var data = Database.getInstance();
-            var result = data.deleteTable(Database.PRODUCT, product);
-            return result;
-        }
-        public ArrayList findAll()
-        {
-            var data = Database.getInstance();
-            var productList = data.selectTable(Database.PRODUCT);
-            return productList;
-        }
+            tableName = Database.PRODUCT;
+        }       
         public Product findById(int id)
         {
             var data = Database.getInstance();

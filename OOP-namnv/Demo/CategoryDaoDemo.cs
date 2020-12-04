@@ -11,30 +11,38 @@ namespace OOP_namnv.Demo
 {
     class CategoryDaoDemo
     {
-        public void insertTest(Category category)
+        private CategoryDAO categoryDAO;
+        public CategoryDaoDemo()
         {
-            CategoryDAO categoryDAO = new CategoryDAO();
-            categoryDAO.insert(category);
+            categoryDAO = new CategoryDAO();
         }
-        public void updateTest(Category category)
+        public bool insertTest(Category category)
         {
-            CategoryDAO categoryDAO = new CategoryDAO();
-            categoryDAO.update(category);
+            return categoryDAO.insert(category);
         }
-        public void deleteTest(Category category)
+        public bool updateTest(Category category)
         {
-            CategoryDAO categoryDAO = new CategoryDAO();
-            categoryDAO.delete(category);
+            return categoryDAO.update(category);
+        }
+        public bool deleteTest(Category category)
+        {
+            return categoryDAO.delete(category);
         }
         public ArrayList findAllTest()
         {
-            CategoryDAO categoryDAO = new CategoryDAO();
             return categoryDAO.findAll();
         }
         public Category findByIdTest(int id)
         {
-            CategoryDAO categoryDAO = new CategoryDAO();
             return categoryDAO.findById(id);
+        }
+        public Category findByNameTest(string name)
+        {
+            return categoryDAO.findByName(name);
+        }
+        public ArrayList searchTest(string name)
+        {
+            return categoryDAO.search(name);
         }
     }
 }

@@ -11,30 +11,38 @@ namespace OOP_namnv.Demo
 {
     class AccessoryDaoDemo
     {
-        public void insertTest(Accessory accessory)
+        private AccessoryDAO accessoryDAO;
+        public AccessoryDaoDemo()
         {
-            AccessoryDAO accessoryDAO = new AccessoryDAO();
-            accessoryDAO.insert(accessory);
+            accessoryDAO = new AccessoryDAO();
         }
-        public void updateTest(Accessory accessory)
+        public bool insertTest(Accessory accessory)
         {
-            AccessoryDAO accessoryDAO = new AccessoryDAO();
-            accessoryDAO.update(accessory);
+            return accessoryDAO.insert(accessory);
         }
-        public void deleteTest(Accessory accessory)
+        public bool updateTest(Accessory accessory)
         {
-            AccessoryDAO accessoryDAO = new AccessoryDAO();
-            accessoryDAO.delete(accessory);
+            return accessoryDAO.update(accessory);
+        }
+        public bool deleteTest(Accessory accessory)
+        {
+            return accessoryDAO.delete(accessory);
         }
         public ArrayList findAllTest()
         {
-            AccessoryDAO accessoryDAO = new AccessoryDAO();
             return accessoryDAO.findAll();
         }
         public Accessory findByIdTest(int id)
         {
-            AccessoryDAO accessoryDAO = new AccessoryDAO();
             return accessoryDAO.findById(id);
+        }
+        public Accessory findByNameTest(string name)
+        {
+            return accessoryDAO.findByName(name);
+        }
+        public ArrayList searchTest(string name)
+        {
+            return accessoryDAO.search(name);
         }
     }
 }

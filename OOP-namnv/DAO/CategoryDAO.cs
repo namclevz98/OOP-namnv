@@ -8,29 +8,11 @@ using OOP_namnv.Entity;
 
 namespace OOP_namnv.DAO
 {
-    class CategoryDAO
+    class CategoryDAO : BaseDAO, IDao
     {
-        public bool insert(Category category)
+        public CategoryDAO()
         {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.insertTable(Database.CATEGORY, category));
-        }    
-        public bool update(Category category)
-        {
-            var data = Database.getInstance();
-            return Convert.ToBoolean(data.updateTable(Database.CATEGORY, category));
-        }
-        public bool delete(Category category)
-        {
-            var data = Database.getInstance();
-            var result = data.deleteTable(Database.CATEGORY, category);
-            return result;
-        }
-        public ArrayList findAll()
-        {
-            var data = Database.getInstance();
-            var categoryList = data.selectTable(Database.CATEGORY);
-            return categoryList;
+            tableName = Database.CATEGORY;
         }
         public Category findById(int id)
         {

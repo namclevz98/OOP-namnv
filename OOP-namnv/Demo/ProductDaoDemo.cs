@@ -11,30 +11,38 @@ namespace OOP_namnv.Demo
 {
     class ProductDaoDemo
     {
-        public void insertTest(Product product)
+        private ProductDAO productDAO;
+        public ProductDaoDemo()
         {
-            ProductDAO productDAO = new ProductDAO();
-            productDAO.insert(product);
+            productDAO = new ProductDAO();
         }
-        public void updateTest(Product product)
+        public bool insertTest(Product product)
         {
-            ProductDAO productDAO = new ProductDAO();
-            productDAO.update(product);
+            return productDAO.insert(product);
         }
-        public void deleteTest(Product product)
+        public bool updateTest(Product product)
         {
-            ProductDAO productDAO = new ProductDAO();
-            productDAO.delete(product);
+            return productDAO.update(product);
+        }
+        public bool deleteTest(Product product)
+        {
+            return productDAO.delete(product);
         }
         public ArrayList findAllTest()
         {
-            ProductDAO productDAO = new ProductDAO();
             return productDAO.findAll();
         }
         public Product findByIdTest(int id)
         {
-            ProductDAO productDAO = new ProductDAO();
             return productDAO.findById(id);
+        }
+        public Product findByNameTest(string name)
+        {
+            return productDAO.findByName(name);
+        }
+        public ArrayList searchTest(string name)
+        {
+            return productDAO.search(name);
         }
 
     }
